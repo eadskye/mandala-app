@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap-theme.min.css">
+    <script src="https://unpkg.com/recharts/umd/Recharts.min.js"></script>
+    <script type="text/jsx" src="navbarLink.jsx"></script>
+  <script type="text/jsx" src="navbarItem.jsx"></script>
+  <script type="text/jsx" src="navbar.jsx"></script>
+
+  <script type="text/javascript" src="data.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <div id="container"></div>
+  </head>
+
+  <body>
+    <nav></nav>
+<script type="text/jsx">
+  /** @jsx React.DOM */
+  window.onload = React.renderComponent(
+    <NavBar items={data} />,
+    document.querySelector('nav')
+  );
+</script>
+
+  </body>
+  <script src="/bundle.js"></script>
+</html>
