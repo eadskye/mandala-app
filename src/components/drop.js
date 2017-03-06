@@ -12,55 +12,62 @@ const styles = {
  export default class FamilyMemberForm extends React.Component {
   constructor() {
     super();
-    this.state = {
-      name: '',
-      age: '',
-      relationship: 'Relationship',
-      frequency: 'Frequency of Contact',
-      gender: 'Gender',
-      race: 'Race/Ethnicity',
-      education: 'Level of Education',
-      economic: 'Economic Position',
-      disclosure: '  What level of self disclosure is currently possible in this relationship?'
-    };
+    this.state =
+      {frequency: 1},
+      {relationship: 1},
+      {gender: 1},
+      {race: 1},
+      {education: 1},
+      {economic: 1},
+      {disclosure: 1}
 
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handleAgeChange = this.handleAgeChange.bind(this);
-    this.handleFrequencyChange = this.handleFrequencyChange.bind(this);
-    this.handleGenderChange = this.handleGenderChange.bind(this);
-    this.handleRelationshipChange = this.handleRelationshipChange.bind(this);
-    this.handleRaceChange = this.handleRaceChange.bind(this);
-    this.handleEducationChange = this.handleEducationChange.bind(this);
-    this.handleEconomicChange = this.handleEconomicChange.bind(this);
-    this.handleDisclosureChange = this.handleDisclosureChange.bind(this);
-  }
-  handleNameChange(e) {
-    this.setState({ name: e.target.value })
-  }
-  handleAgeChange(e) {
-    this.setState({ age:  e.target.value })
-  }
-  handleFrequencyChange(e, i, val) {
-    this.setState({ frequency: val });
-  }
-  handleGenderChange(e) {
-    this.setState({ gender: e.target.value })
-  }
-  handleRelationshipChange(e) {
-    this.setState({ relationship: e.target.value })
-  }
-  handleRaceChange(e) {
-    this.setState({ race: e.target.value })
-  }
-  handleEducationChange(e) {
-    this.setState({ education: e.target.value })
-  }
-  handleEconomicChange(e) {
-    this.setState({ economic: e.target.value })
-  }
-  handleDisclosureChange(e) {
-    this.setState({ disclosure: e.target.value })
-  }
+
+
+      // relationship: 'Relationship',
+      // frequency: 'Frequency of Contact',
+      // gender: 'Gender',
+      // race: 'Race/Ethnicity',
+      // education: 'Level of Education',
+      // economic: 'Economic Position',
+      // disclosure: '  What level of self disclosure is currently possible in this relationship?'
+
+      this.handleFrequencyChange = this.handleFrequencyChange.bind(this);
+      this.handleGenderChange = this.handleGenderChange.bind(this);
+      this.handleRelationshipChange = this.handleRelationshipChange.bind(this);
+      this.handleRaceChange = this.handleRaceChange.bind(this);
+      this.handleEducationChange = this.handleEducationChange.bind(this);
+      this.handleEconomicChange = this.handleEconomicChange.bind(this);
+      this.handleDisclosureChange = this.handleDisclosureChange.bind(this);
+
+    }
+
+
+
+
+    // this.handleNameChange = this.handleNameChange.bind(this);
+    // this.handleAgeChange = this.handleAgeChange.bind(this);
+
+
+
+
+
+
+  // handleNameChange(e) {
+  //   this.setState({ name: e.target.value })
+  // }
+  // handleAgeChange(e) {
+  //   this.setState({ age:  e.target.value })
+  // }
+
+  handleFrequencyChange = (event, index, value) => this.setState({value});
+  handleGenderChange = (event, index, value) => this.setState({value});
+  handleRelationshipChange = (event, index, value) => this.setState({value});
+  handleRaceChange = (event, index, value) => this.setState({value});
+  handleEducationChange = (event, index, value) => this.setState({value});
+  handleEconomicChange = (event, index, value) => this.setState({value});
+  handleDisclosureChange = (event, index, value) => this.setState({value});
+
+
   render() {
     return (
       <div>
@@ -99,16 +106,18 @@ const styles = {
     <DropDownMenu
       onChange={this.handleFrequencyChange}
       value={this.state.value}
+
     >
       <MenuItem frequency={1} primaryText="Frequency of Contact" />
       <MenuItem value={2} primaryText="Daily" />
       <MenuItem value={3} primaryText="Weekly" />
       <MenuItem value={4} primaryText="Monthly" />
 
+
     </DropDownMenu>
 
 
-    <DropDownMenu
+     <DropDownMenu
           onChange={this.handleGenderChange}
           value={this.state.value}
         >
@@ -116,7 +125,7 @@ const styles = {
         <MenuItem value={2} primaryText="Female" />
       <MenuItem value={3} primaryText="Male" />
     <MenuItem value={4} primaryText="Transgender" />
-    <MenuItem value={5} primaryText="Other" />
+  <MenuItem value={5} primaryText="Other" />
 
 
 
@@ -183,6 +192,9 @@ const styles = {
 
 
         </DropDownMenu>
+        <br />
+
+        <DropDownMenuSimpleExample />
 
 
 
@@ -216,8 +228,10 @@ export class DropDownMenuSimpleExample extends React.Component {
 
   render() {
     return (
+
       <div style={style.container}>
         <section style={style.buttonContainer}>
+          <input type="submit" value="Submit Family Member" />
           <button onClick={this.addFamilyMember}>Add Family Member</button>
         </section>
 
